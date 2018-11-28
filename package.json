@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/szylon/gallery/issues"
   },
-  "homepage": "https://github.com/szylon/gallery#readme"
+  "homepage": "https://github.com/szylon/gallery#readme",
+  "dependencies": {
+    "vanilla-javascript": "^1.0.1"
+  }
 }
