@@ -1,18 +1,34 @@
-(function (){
-    class  ThumbList {
+(function () {
 
-
-
-constructor()
-{
-    const $el = document.createElement('div');
-    $el.setAttribute('id', 'thumb-list');
-
-    const $app = document.querySelector('#app');
-    $app.append($el);
-}
-
+    class ThumbList {
+        constructor() {
+            EventEmitter.mixin(this);
+ 
+            const $el = document.createElement('div');
+            $el.setAttribute('id', 'thumb-lst');
+ 
+            const $app = document.querySelector('#app');
+            $app.append($el);
+        }
+ 
+        render() {
+            gallery.db.photos.forEach(({ thumb, image }) => {
+                const photo = new gallery.Thumb(thumb);
+                photo.render();
+ 
+                photo.on('click', () => {
+                    this.trigger('click:thumb', { image });
+                });
+ 
+ 
+            });
+        }
+ 
     }
+ 
+ 
     window.gallery = window.gallery || {};
     window.gallery.ThumbList = ThumbList;
-})();
+ 
+ 
+ })();
