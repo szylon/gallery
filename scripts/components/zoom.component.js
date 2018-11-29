@@ -1,4 +1,4 @@
-(function () {
+
     class Zoom {
 
         render(image) {
@@ -19,6 +19,6 @@
 
         }
     }
-    window.gallery = window.gallery || {};
-    window.gallery.Zoom = Zoom;
-})();
+    module.exports = {
+        Zoom
+    };
