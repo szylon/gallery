@@ -1,17 +1,17 @@
 function setup() {
 
-    const zoom = new gallery.Zoom();
+   const zoom = new gallery.Zoom();
 
-    const thumbList = new gallery.ThumbList();
- 
-    thumbList.on('click:thumb', ({image}) => {
-    zoom.render(image);
-    });
+   const thumbList = new gallery.ThumbList();
+
+   thumbList.on('click:thumb', ({ image }) => {
+      zoom.render(image);
+   });
 
 
-    gallery.PhotosService.fetchPhotosAsync()
-    .then(({ photos }) => { 
-       thumbList.render(photos);
-    });
- }
- window.addEventListener('DOMContentLoaded', setup);
+   gallery.PhotosService.fetchPhotosAsync()
+      .then(({ photos }) => {
+         thumbList.render(photos);
+      });
+}
+window.addEventListener('DOMContentLoaded', setup);
