@@ -9,7 +9,7 @@ function setup() {
     });
 
 
-    gallery.PhotosService.fetchPhotos()
+    gallery.PhotosService.fetchPhotosAsync()
     .then(({ photos }) => { 
        thumbList.render(photos);
     });
