@@ -6,10 +6,10 @@
     },
     "env": {
         "es6": true,
-        "browser": true
+        "browser": true,
+        "node": true
     },
     "globals": {
-        "gallery": true,
-        "EventEmitter": true
+       
     }
  }
